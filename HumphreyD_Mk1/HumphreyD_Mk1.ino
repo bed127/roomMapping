@@ -56,42 +56,5 @@ void loop() {
 }  
 
 void forwardMove() {
-  if (  ((millis() - rightNow) >= 10000) && HCSR04.measureDistanceCm() <= 10) {
-    digitalWrite(ENA1, HIGH);
-    digitalWrite(ENA2, HIGH);
-    digitalWrite(DIR1, HIGH);
-    digitalWrite(DIR2, LOW);
-    analogWrite(PWM1, 255);
-    analogWrite(PWM2, 255);
-    flag = 0;
-  }
-    
   
-    if (digitalRead(LmotorHall1)== LOW){
-      leftForward++;
-    }
-    if (digitalRead(LmotorHall2)== LOW){
-      leftForward++;
-    }
-    if (digitalRead(RmotorHall1)== LOW){
-      rightForward++;
-    }
-    if (digitalRead(RmotorHall1)== LOW){ 
-      rightForward++;
-    }
-  leftCount = (leftForward / 2);
-  rightCount = (rightForward / 2);
-  Serial.print(" Left count: ");
-  Serial.print(leftCount);
-  Serial.print(" Right count: ");
-  Serial.println(rightCount);
-
-  if (leftCount && rightCount > 800)  {
-    digitalWrite(ENA1, LOW);
-    digitalWrite(ENA2, LOW);
-    analogWrite(PWM1, 0);
-    analogWrite(PWM2, 0);
-    leftForward = 0;
-    rightForward= 0;
-  }
 } 
