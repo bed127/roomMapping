@@ -49,9 +49,7 @@ void setup() {
 
 void loop() {
   currentTime = millis();
-  
-  flag == 1;
-  
+ 
   forwardMove();
 }  
 
